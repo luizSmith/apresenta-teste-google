@@ -1,0 +1,23 @@
+/* tsconfig.json */
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "sourceMap": true,
+    "target": "es5",
+    "lib": ["es6"],
+    "types": ["reflect-metadata"],
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
