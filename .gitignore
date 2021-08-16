@@ -1,9 +1,0 @@
-.idea/
-.vscode/
-.env
-node_modules/
-build/
-tmp/
-temp/
-
-ormconfig.json
