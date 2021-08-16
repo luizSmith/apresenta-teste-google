@@ -1,21 +1,49 @@
-FROM node:10-alpine
+# https://dev.to/erezhod/setting-up-a-nestjs-project-with-docker-for-back-end-development-30lg
+# Dockerfile
 
-# Workspace
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# base image
+FROM node:12-alpine
 
-# Copy Files
+# set working directory
+WORKDIR /usr/src
+
+# install global dependencies
+RUN npm install -g @nestjs/cli
+
+# copy files to docker directory
 COPY . .
 
-# Install Dependences
+# install application dependencies
 RUN npm install
-RUN npm install typescript -g
 
-# Build Project
+# build application
 RUN npm run build
 
-# Exposed
-EXPOSE 8080
+EXPOSE 3000
 
-# Run Project
-CMD [ "node", "./dist/app.js" ]
+
+# run application
+CMD ["node", "dist/main"]
+
+
+# # create & set working directory
+# RUN mkdir -p /usr/src
+# WORKDIR /usr/src
+
+# # copy source files
+# COPY . /usr/src
+
+# # install dependencies
+# RUN npm i
+# RUN npm i --save @types/node
+# RUN npm i typescript -g
+# RUN npm i ts-node -g
+
+# # start app 
+# RUN npm run build
+
+# COPY ./src/infraestructure/swagger/user-interface ./dist/infraestructure/swagger/user-interface
+
+# EXPOSE 8080
+
+# CMD ["npm", "run", "dev"]
