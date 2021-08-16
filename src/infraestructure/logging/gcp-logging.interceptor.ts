@@ -22,8 +22,7 @@ export class GcpLogging {
         const { log, entry } = this.mountLogBase(logname, title, details);
         switch (type) {
             case GcpLogTypeEnum.info:
-                log.info(entry);
-                // console.info(details);
+                console.info(details);
                 break;
 
             case GcpLogTypeEnum.notice:

@@ -20,7 +20,6 @@ export class CustomErrorInterceptor implements NestInterceptor {
         context: ExecutionContext,
         next: CallHandler
     ): Observable<unknown> {
-        // next.handle() is an Observable of the controller's result value
         return next.handle().pipe(
             catchError((error) => {
                 if (typeof error === 'object') {
