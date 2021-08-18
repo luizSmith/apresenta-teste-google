@@ -11,3 +11,9 @@ indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 end_of_line = lf
+
+### Markdown
+[*.{css,scss,tsx,js,json,yaml,ts,md}]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = false
