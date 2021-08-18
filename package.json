@@ -25,6 +25,7 @@
     "@google-cloud/logging": "^9.5.4",
     "@nestjs/axios": "0.0.1",
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.0.1",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.4",
     "@nestjs/swagger": "5.0.3",
@@ -52,10 +53,11 @@
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^1.0.0-rc.14",
+    "husky": "^1.3.1",
     "jest": "27.0.6",
     "prettier": "^2.3.2",
     "prettier-eslint": "^13.0.0",
@@ -89,6 +91,11 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "eslint \"{src,apps,libs,test}/**/*.ts\""
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
