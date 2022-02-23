@@ -2,17 +2,12 @@ import { HttpModule } from '@nestjs/axios';
 
 import { Module } from '@nestjs/common';
 
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { PatientService } from 'src/service/patient/patient.service';
 import { PatientController } from './patient.controller';
 
-import { PatientRepository } from 'src/repository/patient/patient.repository';
-import { Patient } from 'src/repository/patient/entity/patient.entity';
+import { PatientServiceModule } from 'src/service/patient/patient.service.module';
 
 @Module({
     controllers: [PatientController],
-    providers: [PatientService, PatientRepository],
-    imports: [HttpModule, TypeOrmModule.forFeature([Patient])],
-    exports: [PatientRepository],
+    imports: [HttpModule, PatientServiceModule],
 })
 export class PatientModule {}
