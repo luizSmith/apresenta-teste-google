@@ -35,6 +35,7 @@ lerna-debug.log*
 
 # env variables
 *.env
+!process-local.env
 
 .vscode
 package-lock.json
