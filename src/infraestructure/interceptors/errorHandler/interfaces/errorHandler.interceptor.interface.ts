@@ -1,4 +1,4 @@
-import { GcpLogTypeEnum } from 'src/infraestructure/logging/interfaces/gcp-logging.interceptor.interface';
+import { GcpLogTypeEnum } from 'src/infraestructure/logging/interfaces/gcpLogging.interceptor.interface';
 
 export interface ICustomError {
     name: string;

@@ -7,7 +7,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 import { AppModule } from './main.module';
 import { ValidationPipe } from '@nestjs/common';
-import { CustomErrorInterceptor } from './infraestructure/interceptors/error-handler/error-handler.interceptor';
+import { CustomErrorInterceptor } from './infraestructure/interceptors/errorHandler/errorHandler.interceptor';
 
 async function bootstrap() {
     const port = process.env.NODE_PORT || 3000;

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import { Logging } from '@google-cloud/logging';
 
-import { GcpLogTypeEnum } from './interfaces/gcp-logging.interceptor.interface';
+import { GcpLogTypeEnum } from './interfaces/gcpLogging.interceptor.interface';
 @Injectable()
 export class GcpLogging {
     private logging: Logging;
