@@ -5,7 +5,6 @@ import { PatientModule } from './controller/patient/patient.module';
 
 @Module({
     imports: [
-        PatientModule,
         ConfigModule.forRoot(),
         TypeOrmModule.forRoot({
             type: 'mysql',
@@ -16,6 +15,7 @@ import { PatientModule } from './controller/patient/patient.module';
             database: process.env.DATABASE,
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         }),
+        PatientModule,
     ],
 })
 export class AppModule {}
