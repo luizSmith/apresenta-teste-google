@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { Logging } from '@google-cloud/logging';
 
 import { GcpLogTypeEnum } from './interfaces/gcpLogging.interceptor.interface';
+import { google } from '@google-cloud/logging/build/protos/protos';
 @Injectable()
 export class GcpLogging {
     private logging: Logging;
@@ -57,6 +58,9 @@ export class GcpLogging {
         details: Record<string, unknown> | string | number | unknown
     ) {
         const log = this.logging.logSync(logname);
+        if (!process.env.GCP_CLOUDRUN_SERVICE_NAME)
+            throw new Error('GCP_CLOUDRUN_SERVICE_NAME not found');
+
         const metadata = {
             labels: {
                 logname,
@@ -70,7 +74,7 @@ export class GcpLogging {
             },
             metadata: details,
             textPayload: title,
-            jsonPayload: details,
+            jsonPayload: details as google.protobuf.IStruct,
         };
 
         return {

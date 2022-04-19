@@ -3,7 +3,7 @@ import { Patient } from './entity/patient.entity';
 
 @EntityRepository(Patient)
 export class PatientRepository extends Repository<Patient> {
-    async findOneById(id: number): Promise<Patient> {
+    async findOneById(id: number): Promise<Patient | undefined> {
         return await this.findOne(id);
     }
 }
