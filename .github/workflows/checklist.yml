@@ -1,8 +1,14 @@
 name: learn-github-actions
-on: [pull-request]
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - 'master'
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - name: Contextual QA Checklists
         uses: wyozi/contextual-qa-checklist-action@1.2
+
