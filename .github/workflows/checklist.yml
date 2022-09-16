@@ -9,7 +9,8 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@master"
-      - name: "TODO to Issue"
-        uses: "alstr/todo-to-issue-action@v4"
-        id: "todo"
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: '# Message with markdown.\nThis is the message that will be displayed on users' first issue.'
+          pr-message: 'Message that will be displayed on users' first pr. Look, a `code block` for markdown.'
