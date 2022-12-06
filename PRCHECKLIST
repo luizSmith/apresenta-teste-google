@@ -46,3 +46,4 @@
 --source master +task+ E os **scripts de banco** estão atualizados?
 --source master +task+ Há algo no **CMS (Contentful)** que precise de atualização?
 --source master +comment+ Após o merge na master não se esqueça de criar o Release dessa versão no GitHub, acompanhar pipeline de deploy, fazer e evidenciar smoke test e por fim comunicar o sucesso/falha do deploy nos e-mails de comunicação. **Bom deploy** :smile:
+
