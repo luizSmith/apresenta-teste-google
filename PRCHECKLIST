@@ -38,12 +38,12 @@
 --source homolog +task+ As [premissas de funções do Clean Code](https://gpcoder.gitbook.io/clean-code/the-key-principles-of-clean-code/functions) estão de acordo? (Single Responsability, DRY, Fewer arguments)
 
 # Checklist para merges na master
---source master +title+ Code Review - Design da PR
---source master +task+ A PR contém somente os arquivos que representam a entrega? _(Confira em files changed na PR)_
---source master +task+ A descrição da PR segue [nossa documentação](http://wiki.drconsulta.com/pt-br/Playbook/Git/Padroes-de-Pull-Requests)? **(Lembre que aqui é aonde colocamos variaveis de ambientes, script de banco, descrição de negócio e etc)**
---source master +title+ Deploy
---source master +task+ As **variaveis de ambiente** estão atualizadas? _NOTA1: Lembre-se que o front possui 2 triggers no cloud build para atualização_
---source master +task+ E os **scripts de banco** estão atualizados?
---source master +task+ Há algo no **CMS (Contentful)** que precise de atualização?
---source master +comment+ Após o merge na master não se esqueça de criar o Release dessa versão no GitHub, acompanhar pipeline de deploy, fazer e evidenciar smoke test e por fim comunicar o sucesso/falha do deploy nos e-mails de comunicação. **Bom deploy** :smile:
+--source feat/* +title+ Code Review - Design da PR
+--source feat/* +task+ A PR contém somente os arquivos que representam a entrega? _(Confira em files changed na PR)_
+--source feat/* +task+ A descrição da PR segue [nossa documentação](http://wiki.drconsulta.com/pt-br/Playbook/Git/Padroes-de-Pull-Requests)? **(Lembre que aqui é aonde colocamos variaveis de ambientes, script de banco, descrição de negócio e etc)**
+--source feat/* +title+ Deploy
+--source feat/* +task+ As **variaveis de ambiente** estão atualizadas? _NOTA1: Lembre-se que o front possui 2 triggers no cloud build para atualização_
+--source feat/* +task+ E os **scripts de banco** estão atualizados?
+--source feat/* +task+ Há algo no **CMS (Contentful)** que precise de atualização?
+--source feat/* +comment+ Após o merge na master não se esqueça de criar o Release dessa versão no GitHub, acompanhar pipeline de deploy, fazer e evidenciar smoke test e por fim comunicar o sucesso/falha do deploy nos e-mails de comunicação. **Bom deploy** :smile:
 
