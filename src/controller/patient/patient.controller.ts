@@ -1,14 +1,11 @@
-import { Controller, Get, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, HttpStatus } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { FindPatientDto } from 'src/service/patient/dto/FindPatient.dto';
-import { PatientService } from 'src/service/patient/patient.service';
 
 @Controller('patient')
 @ApiTags('Patient')
 export class PatientController {
-    constructor(private readonly _patientService: PatientService) {}
-
-    @Get(':id')
+    @Get()
     @ApiResponse({
         status: HttpStatus.OK,
         description: 'success on returning patient',
@@ -18,7 +15,11 @@ export class PatientController {
         status: HttpStatus.INTERNAL_SERVER_ERROR,
         description: 'Request Failure with status 500',
     })
-    async findOne(@Param('id') id: number): Promise<FindPatientDto> {
-        return await this._patientService.findOne(id);
+    findOne(): object {
+        const retorno = {
+            mensagem: 'Todos os pacientes estão aqui!',
+        };
+
+        return retorno;
     }
 }
