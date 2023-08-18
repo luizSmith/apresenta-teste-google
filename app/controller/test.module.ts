@@ -2,10 +2,10 @@ import { HttpModule } from '@nestjs/axios';
 
 import { Module } from '@nestjs/common';
 
-import { PatientController } from './patient.controller';
+import { TestController } from './test.controller';
 
 @Module({
-    controllers: [PatientController],
+    controllers: [TestController],
     imports: [HttpModule],
 })
-export class PatientModule {}
+export class TestModule {}
