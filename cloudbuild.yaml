@@ -24,6 +24,9 @@ steps:
     - 'gcr.io/$PROJECT_ID/$REPO_NAME-$BRANCH_NAME:$SHORT_SHA'
     - '--region'
     - '$_CLOUD_RUN_REGION'
+    - '--allow-unauthenticated'
+    - '--port'
+    - '$_CLOUD_RUN_PORT'
     - '--platform'
     - 'managed'
 images:
