@@ -16,10 +16,10 @@ async function bootstrap() {
     app.useGlobalPipes(new ValidationPipe());
     app.setGlobalPrefix('v1');
     const config = new DocumentBuilder()
-        .setTitle('DRC SKELETON API NESTJS')
-        .setDescription('Skeleton API nest js')
+        .setTitle('Pipeline - Demo API')
+        .setDescription('Uma aplicação demonstrativa')
         .setVersion('1.0')
-        .addTag('DRC-nestjs-skeleton')
+        .addTag('demo-app')
         .build();
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api-docs', app, document);
