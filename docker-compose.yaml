@@ -6,6 +6,6 @@ services:
     ports:
     -  "3000:3000"
     volumes:
-      - ./src:/usr/src/src
-      - /usr/src/src/node_modules
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
     entrypoint: ["npm", "run", "start"]

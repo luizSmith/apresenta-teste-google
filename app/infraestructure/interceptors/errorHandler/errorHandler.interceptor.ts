@@ -7,8 +7,8 @@ import {
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { GcpLogging } from 'src/infraestructure/logging/gcpLogging.interceptor';
-import { GcpLogTypeEnum } from 'src/infraestructure/logging/interfaces/gcpLogging.interceptor.interface';
+import { GcpLogging } from 'app/infraestructure/logging/gcpLogging.interceptor';
+import { GcpLogTypeEnum } from 'app/infraestructure/logging/interfaces/gcpLogging.interceptor.interface';
 @Injectable()
 export class CustomErrorInterceptor implements NestInterceptor {
     private logger: GcpLogging;
