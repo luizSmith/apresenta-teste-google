@@ -29,10 +29,15 @@
 ## Running the app
 
 ```bash
-# development
 $ docker-compose up
+# or
+$ docker-compose --build up
+
 ```
 
 ## Test
 
 ```bash
+# run unit tests
+docker run demp-app npm run test:cov
+```
